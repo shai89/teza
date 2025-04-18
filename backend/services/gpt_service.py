@@ -5,7 +5,7 @@ from fastapi import HTTPException
 from dotenv import load_dotenv
 from pathlib import Path
 
-from backend.core.constants import (
+from core.constants import (
     GPT_MODEL,
     GPT_TEMPERATURE,
     GPT_MAX_TOKENS,

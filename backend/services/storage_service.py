@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from backend.core.models import SubmissionOut
+from core.models import SubmissionOut
 
 DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "submissions.json"
 

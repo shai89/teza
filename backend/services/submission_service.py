@@ -1,6 +1,6 @@
-from backend.core.models import SubmissionIn, SubmissionOut
-from backend.services.storage_service import save_submission, load_last_submission
-from backend.services.gpt_service import generate_band_description, generate_band_image_url
+from core.models import SubmissionIn, SubmissionOut
+from services.storage_service import save_submission, load_last_submission
+from services.gpt_service import generate_band_description, generate_band_image_url
 from datetime import datetime
 import logging
 

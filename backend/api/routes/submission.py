@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from backend.controllers.submission_controller import handle_submission, get_last_submission
-from backend.core.models import SubmissionIn, SubmissionOut
-from backend.core.constants import HTTP_201_CREATED
+from controllers.submission_controller import handle_submission, get_last_submission
+from core.models import SubmissionIn, SubmissionOut
+from core.constants import HTTP_201_CREATED
 router = APIRouter()
 
 @router.post("/submissions", response_model=SubmissionOut, status_code=HTTP_201_CREATED)

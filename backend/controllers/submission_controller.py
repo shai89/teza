@@ -1,7 +1,7 @@
 from fastapi import HTTPException
-from backend.core.models import SubmissionIn, SubmissionOut
-from backend.services.submission_service import process_submission, get_last_submission_saved
-from backend.core.constants import HTTP_404_NOT_FOUND
+from core.models import SubmissionIn, SubmissionOut
+from services.submission_service import process_submission, get_last_submission_saved
+from core.constants import HTTP_404_NOT_FOUND
 
 def handle_submission(submission: SubmissionIn) -> SubmissionOut:
     return process_submission(submission)
