@@ -78,7 +78,11 @@ def generate_band_image_url(band: str, year: int, reason: str, api_key: str = No
     openai.api_key = key
     
     prompt = f"{band} performing live in {year}, colorful and energetic"
-
+    if DEFAULT_API_KEY:
+        preview = f"{DEFAULT_API_KEY[:8]}... ({len(DEFAULT_API_KEY)} chars)"
+        logger.info(f"✅ OpenAI API Key Loaded: {preview}")
+    else:
+        logger.warning("❌ OpenAI API Key not found in environment!")
     try:
         response = openai.Image.create(
             prompt=prompt,
