@@ -76,8 +76,8 @@ def generate_band_image_url(band: str, year: int, reason: str, api_key: str = No
         )
 
     openai.api_key = key
-
-    prompt = f"An artistic illustration of the band '{band}' performing live in {year}. Style: modern, energetic, vibrant colors. Reason fans love them: {reason}"
+    
+    prompt = f"{band} performing live in {year}, colorful and energetic"
 
     try:
         response = openai.Image.create(
