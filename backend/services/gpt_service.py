@@ -64,11 +64,11 @@ def generate_band_description(band: str, year: int, reason: str) -> str:
             detail=f"{ERROR_OPENAI_FAILURE}: {str(e)}"
         )
 
-def generate_band_image_url(band: str, year: int, reason: str, api_key: str = None) -> str:
+def generate_band_image_url(band: str, year: int, reason: str) -> str:
     """
     Uses OpenAI's DALL·E to generate an image URL related to the band.
     """
-    key = api_key or DEFAULT_API_KEY
+    key = DEFAULT_API_KEY
     if not key:
         raise HTTPException(
             status_code=HTTP_500_INTERNAL_SERVER_ERROR,
@@ -78,6 +78,7 @@ def generate_band_image_url(band: str, year: int, reason: str, api_key: str = No
     openai.api_key = key
     
     prompt = f"{band} performing live in {year}, colorful and energetic"
+    logger.info(f"🎨 DALL·E prompt: {prompt}")
     if DEFAULT_API_KEY:
         preview = f"{DEFAULT_API_KEY[:8]}... ({len(DEFAULT_API_KEY)} chars)"
         logger.info(f"✅ OpenAI API Key Loaded: {preview}")
